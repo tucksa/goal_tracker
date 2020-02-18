@@ -1,0 +1,12 @@
+td {
+    border: solid black;
+    border-left: 0em;
+    padding: 1em 3em;
+    margin: 1em 0em;
+}
+#month{
+    text-align: center;
+}
+table {
+    margin: 1em 13.5em;
+}
