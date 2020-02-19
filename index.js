@@ -76,12 +76,20 @@ switch(date.getMonth() + 1){
 $('#month').html(month)
 console.log(weekday)
 
-function monthLength(date){
+function monthLength(){
     let currentDate = new Date()
     let currentMonth = currentDate.getMonth()
     let currentYear = currentDate.getFullYear()
+    let testDay = 31
+    let testDate = new Date(currentYear, currentMonth, testDay)
     //console.log(date + '\n'+ currentMonth + '\n'+ currentYear)
-    console.log(date.getMonth() == currentMonth)
+   
+    while(testDate.getMonth() != currentMonth){
+        testDay -= 1
+        testDate = new Date(currentYear, currentMonth, testDay)
+    }
+    return testDay
 }
 
-monthLength(new Date(2020, 1,4))
+const lastDay = monthLength()
+console.log(lastDay)
