@@ -75,3 +75,13 @@ switch(date.getMonth() + 1){
 
 $('#month').html(month)
 console.log(weekday)
+
+function monthLength(date){
+    let currentDate = new Date()
+    let currentMonth = currentDate.getMonth()
+    let currentYear = currentDate.getFullYear()
+    //console.log(date + '\n'+ currentMonth + '\n'+ currentYear)
+    console.log(date.getMonth() == currentMonth)
+}
+
+monthLength(new Date(2020, 1,4))
