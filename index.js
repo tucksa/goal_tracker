@@ -102,7 +102,7 @@ function calendarPrint(lastDaty){
         if(i % 7 == 0 && i != 0){
             rowCount += 1
         }
-        $('#'+rowCount).append(td)
+        $('#'+rowCount).append(td).addClass('calTd')
         //console.log(i+1)
     }
 }
