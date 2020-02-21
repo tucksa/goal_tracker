@@ -74,7 +74,7 @@ switch(date.getMonth() + 1){
 }
 
 $('#month').html(month)
-console.log(weekday)
+//console.log(weekday)
 
 function monthLength(){
     let currentDate = new Date()
@@ -92,4 +92,19 @@ function monthLength(){
 }
 
 const lastDay = monthLength()
-console.log(lastDay)
+
+function calendarPrint(lastDaty){
+    const startWeekday = date.getUTCDay()
+    console.log('the start day is '+ startWeekday)
+    var rowCount = 1
+    for(let i = 0; i < lastDay + startWeekday + 1; i++){
+        const td = document.createElement('td')
+        if(i % 7 == 0 && i != 0){
+            rowCount += 1
+        }
+        $('#'+rowCount).append(td)
+        //console.log(i+1)
+    }
+}
+
+calendarPrint(lastDay)
