@@ -128,9 +128,19 @@ function calendarPrint(date, lastDay){
 console.log(date)
 calendarPrint(date, lastDay)
 
-//funciton to move between months
+//funciton to move forward months
 $('#addMonth').click(function(){
     date = new Date(year, date.getMonth()+ 1, 1)
+    tranMonth()
+    var adjlastDay = monthLength(date)
+    calendarPrint(date, adjlastDay)
+    console.log(date)
+    console.log(adjlastDay)
+})
+
+//funcion to move back months
+$('#subMonth').click(function(){
+    date = new Date(year, date.getMonth()- 1, 1)
     tranMonth()
     var adjlastDay = monthLength(date)
     calendarPrint(date, adjlastDay)
