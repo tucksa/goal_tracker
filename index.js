@@ -11,7 +11,7 @@ $("#btn").click(function(){
 })
 
 //Set up variables for the current date (month, day, year, weekday)
-const date = new Date()
+var date = new Date()
 let month = ''
 const day = date.getDate()
 const year = date.getUTCFullYear()
@@ -42,70 +42,76 @@ switch(date.getDay()){
 }
 
 //Turn number version of the month into string
-switch(date.getMonth() + 1){
-    case 1:
-        month = 'January'
-        break;
-    case 2:
-        month = 'Febuary'
-        break;
-    case 3:
-        month = 'March'
-        break;
-    case 4: 
-        month = 'April'
-        break;
-    case 5:
-        month = 'May'
-        break;
-    case 6:
-        month = 'June'
-        break;
-    case 7:
-        month = 'July'
-        break;
-    case 8:
-        month = 'August'
-        break;
-    case 9:
-        month= 'September'
-        break;
-    case 10:
-        month = 'October'
-        break;
-    case 11:
-        month = 'November'
-        break;
-    case 12:
-        month = 'December'
+function tranMonth(){
+    switch(date.getMonth() + 1){
+        case 1:
+            month = 'January'
+            break;
+        case 2:
+            month = 'Febuary'
+            break;
+        case 3:
+            month = 'March'
+            break;
+        case 4: 
+            month = 'April'
+            break;
+        case 5:
+            month = 'May'
+            break;
+        case 6:
+            month = 'June'
+            break;
+        case 7:
+            month = 'July'
+            break;
+        case 8:
+            month = 'August'
+            break;
+        case 9:
+            month= 'September'
+            break;
+        case 10:
+            month = 'October'
+            break;
+        case 11:
+            month = 'November'
+            break;
+        case 12:
+            month = 'December'
+    }
+    $('#month').html(month)
 }
-
-//Display month dynamically 
-$('#month').html(month)
+tranMonth()
 
 //Determine how many days will be in that current month
-function monthLength(){
-    let currentDate = new Date()
-    let currentMonth = currentDate.getMonth()
-    let currentYear = currentDate.getFullYear()
+function monthLength(date){
+    let month = date.getMonth()
+    let year = date.getFullYear()
     let testDay = 31
-    let testDate = new Date(currentYear, currentMonth, testDay)
+    let testDate = new Date(year, month, testDay)
     //console.log(date + '\n'+ currentMonth + '\n'+ currentYear)
    
-    while(testDate.getMonth() != currentMonth){
+    while(testDate.getMonth() != month){
         testDay -= 1
-        testDate = new Date(currentYear, currentMonth, testDay)
+        testDate = new Date(year, month, testDay)
     }
     return testDay
 }
 
-const lastDay = monthLength()
+var lastDay = monthLength(new Date())
 
 //using the last day found from the function determining the length of the month dynamically print the dates on the calendar with the coorisponding weekdays
-function calendarPrint(lastDaty){
+function calendarPrint(date, lastDay){
     const startWeekday = date.getUTCDay()
     console.log('the start day is '+ startWeekday)
     var rowCount = 1
+    $('#1').empty()
+    $('#2').empty()
+    $('#3').empty()
+    $('#4').empty()
+    $('#5').empty()
+    $('#6').empty()
     for(let i = 0; i < lastDay + startWeekday; i++){
         const td = document.createElement('td')
         td.id = 'cal' + i
@@ -120,4 +126,14 @@ function calendarPrint(lastDaty){
     }
 }
 console.log(date)
-calendarPrint(lastDay)
+calendarPrint(date, lastDay)
+
+//funciton to move between months
+$('#addMonth').click(function(){
+    date = new Date(year, date.getMonth()+ 1, 1)
+    tranMonth()
+    var adjlastDay = monthLength(date)
+    calendarPrint(date, adjlastDay)
+    console.log(date)
+    console.log(adjlastDay)
+})
