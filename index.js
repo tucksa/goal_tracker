@@ -1,3 +1,4 @@
+//Show check mark image on button or hide it (continue to edit once button added to days on calendar)
 $("#btn").click(function(){
     let display = $('#greetings').attr('style')
     console.log(display)
@@ -8,11 +9,15 @@ $("#btn").click(function(){
     }
     
 })
+
+//Set up variables for the current date (month, day, year, weekday)
 const date = new Date()
 let month = ''
 const day = date.getDate()
 const year = date.getUTCFullYear()
 let weekday = '';
+
+//turn # weekday into string version
 switch(date.getDay()){
     case 0:
         weekday = 'Sunday'
@@ -35,6 +40,8 @@ switch(date.getDay()){
     case 6:
         weekday = 'Saturday'
 }
+
+//Turn number version of the month into string
 switch(date.getMonth() + 1){
     case 1:
         month = 'January'
@@ -73,9 +80,10 @@ switch(date.getMonth() + 1){
         month = 'December'
 }
 
+//Display month dynamically 
 $('#month').html(month)
-//console.log(weekday)
 
+//Determine how many days will be in that current month
 function monthLength(){
     let currentDate = new Date()
     let currentMonth = currentDate.getMonth()
@@ -93,6 +101,7 @@ function monthLength(){
 
 const lastDay = monthLength()
 
+//using the last day found from the function determining the length of the month dynamically print the dates on the calendar with the coorisponding weekdays
 function calendarPrint(lastDaty){
     const startWeekday = date.getUTCDay()
     console.log('the start day is '+ startWeekday)
