@@ -97,14 +97,18 @@ function calendarPrint(lastDaty){
     const startWeekday = date.getUTCDay()
     console.log('the start day is '+ startWeekday)
     var rowCount = 1
-    for(let i = 0; i < lastDay + startWeekday + 1; i++){
+    for(let i = 0; i < lastDay + startWeekday; i++){
         const td = document.createElement('td')
+        td.id = 'cal' + i
         if(i % 7 == 0 && i != 0){
             rowCount += 1
         }
         $('#'+rowCount).append(td).addClass('calTd')
         //console.log(i+1)
     }
+    for(let i = 0; i < lastDay; i++){
+        $('#cal'+ (startWeekday + i)).html(i+1)
+    }
 }
-
+console.log(date)
 calendarPrint(lastDay)
