@@ -81,6 +81,7 @@ function tranMonth(){
             month = 'December'
     }
     $('#month').html(month)
+    $('h1').prepend(year + ' ')
 }
 tranMonth()
 
@@ -123,6 +124,7 @@ function calendarPrint(date, lastDay){
     }
     for(let i = 0; i < lastDay; i++){
         $('#cal'+ (startWeekday + i)).html(i+1)
+
     }
 }
 console.log(date)
@@ -146,4 +148,9 @@ $('#subMonth').click(function(){
     calendarPrint(date, adjlastDay)
     console.log(date)
     console.log(adjlastDay)
+})
+
+$('td').click(function(){
+    console.log($('#month').text())
+    console.log($('h1').text().split(' ')[0])
 })

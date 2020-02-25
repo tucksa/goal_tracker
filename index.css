@@ -13,10 +13,16 @@ table {
 }
 .calTd {
     height: 5em;
+    cursor: pointer;
 }
 #addMonth{
-    margin-left: 90em;
+    margin-left: 67em;
+    display: inline;
 }
 #subMonth{
     margin-left: 20em;
+    display: inline;
+}
+#calDayDisplay{
+    display: none;
 }

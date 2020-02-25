@@ -8,8 +8,8 @@
         <h1>Calendar</h1>
         <div id= 'calendar'>
             <h2 id= 'month'></h2>
-            <button id = 'subMonth'>previous</button>
-            <button id = 'addMonth'>next</button>
+            <button id = 'subMonth'><<</button> 
+            <button id = 'addMonth'>>></button>
             <table id = 'calTable'>
                 <thead>
                     <td style= 'border-left: solid black'>
@@ -44,6 +44,12 @@
                 </tbody>
             </table>
             <p id= 'day'></p>
+        </div>
+        <div id= 'calDayDisplay'>
+            <h2 id= 'daySelected'></h2>
+            <input type= 'text' id= 'taskInput'/>
+            <button id= 'addTask'>Add Task</button>
+            <ul id= 'taskDisplay'></ul>
         </div>
         <p id='greetings' style="display: block;">hello world!</p>
         <button id='btn'>Toggle</button>
