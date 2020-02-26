@@ -127,7 +127,6 @@ function calendarPrint(date, lastDay){
     }
 
     $('h1').empty().prepend(year + ' Calendar')
-
 }
 console.log(date)
 calendarPrint(date, lastDay)
@@ -152,12 +151,7 @@ $('#subMonth').click(function(){
     console.log(adjlastDay)
 })
 
-$('td').click(function(){
-    //let m = $('#month').text()
-    //let y= $('h1').text().split(' ')[0]
-   // let d = parseInt(this.id.slice(3))-1
-    //let dt = new Date(y, m, d)
-    //console.log(y +', '+ m +', '+ d)
+$(document).on('click', 'td', function(){
     let id = this.id
     let index = $('#'+id).index()
     console.log($('#th' + index).text().trim())
