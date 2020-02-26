@@ -160,8 +160,12 @@ $(document).on('click', 'td', function(){
     $('#daySelected').html(day)
 })
 
-$('#addTask').click(function(){
+$('#addTask').click(function(e){
+    e.preventDefault()
     let addedTask = $('#taskInput').val()
-    $('#taskInput').html(' ')
-    console.log(addedTask)
+    let li = document.createElement('input')
+    let label = document.createElement('label')
+    $(li).attr('type', 'checkbox')
+    $(label).html(addedTask).append(li).addClass('list')
+    $('#taskDisplay').append(label)
 })

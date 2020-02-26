@@ -26,3 +26,19 @@ table {
 #calDayDisplay{
     display: none;
 }
+.list {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.list input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+}
