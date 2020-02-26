@@ -154,5 +154,14 @@ $('#subMonth').click(function(){
 $(document).on('click', 'td', function(){
     let id = this.id
     let index = $('#'+id).index()
-    console.log($('#th' + index).text().trim())
+    let day = $('#th' + index).text().trim()
+    $('#calendar').attr('style', 'display: none')
+    $('#calDayDisplay').attr('style', 'display: block')
+    $('#daySelected').html(day)
+})
+
+$('#addTask').click(function(){
+    let addedTask = $('#taskInput').val()
+    $('#taskInput').html(' ')
+    console.log(addedTask)
 })
