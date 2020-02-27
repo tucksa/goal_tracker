@@ -126,7 +126,7 @@ function calendarPrint(date, lastDay){
 
     }
 
-    $('h1').empty().prepend(year + ' Calendar')
+    $('#monthH1').empty().prepend(year + ' Calendar')
 }
 console.log(date)
 calendarPrint(date, lastDay)
@@ -151,6 +151,7 @@ $('#subMonth').click(function(){
     console.log(adjlastDay)
 })
 
+// switch to the individual day view 
 $(document).on('click', 'td', function(){
     let id = this.id
     let index = $('#'+id).index()
@@ -160,9 +161,11 @@ $(document).on('click', 'td', function(){
     $('#daySelected').html(day)
 })
 
+// adding list of things to accomplish for the day to achieve goals
 $('#addTask').click(function(e){
     e.preventDefault()
     let addedTask = $('#taskInput').val()
+    $('#taskInput').val('') 
     let li = document.createElement('input')
     let label = document.createElement('label')
     $(li).attr('type', 'checkbox')
