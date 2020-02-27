@@ -14,7 +14,7 @@ $("#btn").click(function(){
 var date = new Date()
 let month = ''
 const day = date.getDate()
-const year = date.getUTCFullYear()
+var year = date.getUTCFullYear()
 let weekday = '';
 
 //turn # weekday into string version
@@ -137,6 +137,7 @@ $('#addMonth').click(function(){
     tranMonth()
     var adjlastDay = monthLength(date)
     calendarPrint(date, adjlastDay)
+    year = date.getFullYear()
     console.log(date)
     console.log(adjlastDay)
 })
@@ -147,6 +148,7 @@ $('#subMonth').click(function(){
     tranMonth()
     var adjlastDay = monthLength(date)
     calendarPrint(date, adjlastDay)
+    year = date.getFullYear()
     console.log(date)
     console.log(adjlastDay)
 })

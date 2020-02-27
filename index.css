@@ -42,3 +42,18 @@ table {
     height: 25px;
     width: 25px;
 }
+#jumbotron {
+    background-image: url('./assets/images/jumbo.jpg');
+    height: 65em;
+    width: 100em;
+}
+nav, #calendar {
+    height: auto;
+    width: 100em;
+    background-color:#eee;
+    margin: 0px;
+    border: 1px solid #fefefe;
+}
+h1 {
+    padding: 1em;
+}
