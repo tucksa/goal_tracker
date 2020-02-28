@@ -174,3 +174,13 @@ $('#addTask').click(function(e){
     $(label).html(addedTask).append(li).addClass('list')
     $('#taskDisplay').append(label)
 })
+
+//Dynamically display the users core goals (this will be info associated with the user account)
+//here instead of hard coded eventually include a get for the users set goals
+let coreGoalsArr = ['Become a developer', 'Create an exercise habit', "Support family"]
+for(let i = 0; i < coreGoalsArr.length; i ++){
+    let coreLi = document.createElement('li')
+    $(coreLi).html(coreGoalsArr[i])
+    $('#coreGoalList').append(coreLi)
+
+}

@@ -44,6 +44,7 @@ table {
 }
 #jumbotron {
     background-image: url('./assets/images/jumbo.jpg');
+    background-size: contain;
     height: 65em;
     width: 102.5em;
 }
@@ -63,4 +64,13 @@ a {
     border-right: 1px solid darkgray;
     margin: 0px 15px;
     padding: .5em;
+}
+p {
+    margin: auto;
+    padding: 1em;
+    width: 50%;
+}
+#coreGoalList {
+    margin: auto;
+    width: 15%;
 }
