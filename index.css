@@ -74,3 +74,8 @@ p {
     margin: auto;
     width: 15%;
 }
+#InspQuote {
+    height: 15em;
+    width: 15em;
+    background-repeat: no-repeat;
+}

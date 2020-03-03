@@ -184,3 +184,17 @@ for(let i = 0; i < coreGoalsArr.length; i ++){
     $('#coreGoalList').append(coreLi)
 
 }
+
+$.ajax({
+    url:'https://healthruwords.p.rapidapi.com/v1/quotes/',
+    headers:{
+        "x-rapidapi-host": "healthruwords.p.rapidapi.com",
+	    "x-rapidapi-key": "PaDoWG4Fd0mshh2MgIGtSmVmiiQTp1nM0Y8jsnhfVgnVQvg7Rt"
+    },
+    method: 'GET'
+
+})
+.then(function(res){
+    let url = res[0].media
+    $('#InspQuote').attr('style', "background-image: url("+url+");")
+})
